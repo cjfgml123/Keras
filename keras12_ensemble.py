@@ -32,9 +32,13 @@ dense21 = Dense(7)(input2)
 dense22 = Dense(4)(dense21)
 output2 = Dense(5)(dense22)
 
-from keras.layers.merge import concatenate
-merge1 = concatenate([output1,output2]) # 모델 1,2 엮기
+# concatenate 사용방법 1
+#from keras.layers.merge import concatenate
+#merge1 = concatenate([output1,output2]) # 모델 1,2 엮기
 
+# concatenate 사용방법 2
+from keras.layers.merge import Concatenate
+merge1 = Concatenate()([output1,output2])
 middle1 = Dense(4)(merge1)
 middle2 = Dense(7)(middle1)
 output = Dense(1)(middle2)
