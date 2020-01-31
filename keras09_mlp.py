@@ -3,12 +3,12 @@ import numpy as np
 x = np.array([range(1,101),range(101,201)])
 y = np.array([range(1,101),range(101,201)])
 
-# print(x.shape) # (2,10)
-# print(y.shape) # (2,10)
+print(x.shape) # (2,100)
+print(y.shape) # (2,100)
 x = np.transpose(x) # 행과 열을 바꿔줌
 y = np.transpose(y)
-print(x.shape) # (10,2)
-print(y.shape) # (10,2)
+print(x.shape) # (100,2)
+print(y.shape) # (100,2)
 
 from sklearn.model_selection import train_test_split
 

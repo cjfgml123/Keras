@@ -2,6 +2,7 @@
 import numpy as np
 x = np.array(range(1,101))
 y = np.array(range(1,101))
+print(x.shape)
 
 from sklearn.model_selection import train_test_split
 
