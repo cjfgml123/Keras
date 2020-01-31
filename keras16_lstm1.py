@@ -35,9 +35,15 @@ model.summary()
 # 3. 훈련
 model.compile(loss='mse', optimizer='adam', metrics=['mae'])  
 
-from keras.callbacks import EarlyStopping
+from keras.callbacks import EarlyStopping, TensorBoard
+
+tb_hist = TensorBoard(log_dir= './graph', 
+                      histogram_freq=0, # 통상적으로 써줌
+                      write_graph=True, 
+                      write_images=True) 
+
 early_stopping = EarlyStopping(monitor= 'acc', patience= 20, mode = 'max') 
-model.fit(x, y, epochs=200, batch_size=1, verbose=1, callbacks=[early_stopping])  
+model.fit(x, y, epochs=200, batch_size=1, verbose=1, callbacks=[early_stopping,tb_hist])  
 
 # 4. 평가예측
 loss, mae = model.evaluate(x, y, batch_size=1)

@@ -27,8 +27,16 @@ model.add(Dense(1))
 model.summary()
 
 model.compile(loss='mse', optimizer='adam', metrics=['mae']) # mse, mae 사용
+
+from keras.callbacks import TensorBoard
+
+tb_hist = TensorBoard(log_dir= './graph', 
+                      histogram_freq=0, # 통상적으로 써줌
+                      write_graph=True, 
+                      write_images=True) 
+
 model.fit(x,y, 
-          epochs=200, batch_size = 1) 
+          epochs=200, batch_size = 1, callbacks=[tb_hist]) 
 
 # 평가예측
 loss, mae = model.evaluate(x, y, batch_size = 1)

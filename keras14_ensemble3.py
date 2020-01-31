@@ -40,6 +40,7 @@ print(y3_val.shape)
 # 모델구성
 from keras.models import Sequential, Model
 from keras.layers import Dense, Input
+from keras.callbacks import TensorBoard
 
 #함수형 모델 1
 input1 = Input(shape = (3, ))
@@ -79,8 +80,14 @@ model.summary()
 
 # 훈련
 model.compile(loss='mse', optimizer='adam', metrics=['mse']) # mse, mae 사용
+
+tb_hist = TensorBoard(log_dir= './graph', 
+                      histogram_freq=0, # 통상적으로 써줌
+                      write_graph=True, 
+                      write_images=True) 
+
 model.fit(x1_train, [y1_train,y2_train,y3_train], 
-          epochs=100, batch_size = 1, validation_data = (x1_val,[y1_val,y2_val,y3_val])) 
+          epochs=100, batch_size = 1, validation_data = (x1_val,[y1_val,y2_val,y3_val]),callbacks = [tb_hist]) 
 
 # 평가예측
 aaa = model.evaluate(x1_test, [y1_test, y2_test, y3_test], batch_size = 1)
