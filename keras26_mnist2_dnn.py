@@ -7,8 +7,8 @@ import numpy as np
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-print(x_train.shape)
-print(y_train.shape)
+print(x_train.shape) #60000,28,28
+print(y_train.shape) #60000
 
 x_train = x_train.reshape(x_train.shape[0],28*28).astype('float32')/255
 x_test = x_test.reshape(x_test.shape[0],28*28).astype('float32')/255
@@ -16,8 +16,8 @@ from keras.utils import np_utils
 y_train = np_utils.to_categorical(y_train)  # 원 핫 인코딩
 y_test = np_utils.to_categorical(y_test) 
 
-print(x_train.shape) 
-print(y_train.shape) 
+print(x_train.shape) #60000,784
+print(y_train.shape) #60000,10
 #print(type(x_train))
 
 model = Sequential()

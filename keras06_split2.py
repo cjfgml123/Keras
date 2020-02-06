@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 x_train, x_val, y_train, y_val = train_test_split(x,y, test_size = 0.4, shuffle=False)
 x_val1, x_test, y_val2, y_test = train_test_split(x_val,y_val, test_size = 0.5, shuffle=False)
 
-'''
+
 #2. 모델구성
 from keras.models import Sequential
 from keras.layers import Dense
@@ -40,4 +40,3 @@ print(aaa)
 
 # bbb = model.predict(x)
 # print(bbb)
-'''
