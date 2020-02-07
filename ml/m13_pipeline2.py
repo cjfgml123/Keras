@@ -30,13 +30,13 @@ sorted(pipe.get_params().keys())
 #pipe = Pipeline([("scaler", MinMaxScaler()), ('svm', SVC())])
 pipe.fit(x_train, y_train)
 
-
-parameters = [
-    {'classifier__max_depth': [2,4,6,8,10],'classifier__min_samples_leaf' :[3,5,7,10]},
-    {'classifier__max_depth': [3,5,7,9,11], 'classifier__min_samples_leaf' :[4,6,8,9]},
-    {'classifier__max_depth': [5,7,9,11,13], 'classifier__min_samples_leaf' :[2,4,6,8]}   
-] # n_estimator :  결정트리의 개수, max_depth : 트리의 깊이, min_samples_leaf : 리프노드가 되기 위한 최소한의 샘플 데이터 수
-# # min_samples_split : 노드를 분할하기 위한 최소한의 데이터 수 
+# 수정 필요 오류발생
+# parameters = [
+#     {'classifier__max_depth': [2,4,6,8,10],'classifier__min_samples_leaf' :[3,5,7,10]},
+#     {'classifier__max_depth': [3,5,7,9,11], 'classifier__min_samples_leaf' :[4,6,8,9]},
+#     {'classifier__max_depth': [5,7,9,11,13], 'classifier__min_samples_leaf' :[2,4,6,8]}   
+# ] # n_estimator :  결정트리의 개수, max_depth : 트리의 깊이, min_samples_leaf : 리프노드가 되기 위한 최소한의 샘플 데이터 수
+# # # min_samples_split : 노드를 분할하기 위한 최소한의 데이터 수 
 
 # 그리드 서치
 kfold_cv = KFold(n_splits = 5, shuffle = True)
