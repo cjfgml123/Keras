@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 samsung = np.load('./samsung_stock/data/samsung.npy')
-kospi200 = np.load('./samsung_stock/data/kospi200.npy')
+#kospi200 = np.load('./samsung_stock/data/kospi200.npy')
 
 print(samsung) #(426, 5)
 print(samsung.shape) #(426, 5)
