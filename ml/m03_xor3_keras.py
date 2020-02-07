@@ -32,13 +32,15 @@ model.fit(x_train, y_train, epochs=1000, batch_size=1)
 x_test = np.array([[0, 0], [1, 0], [0, 1], [1, 1]])
 # [[0, 0], [1, 0], [0, 1], [1, 1]]
 y_predict = model.predict(x_test)
-''' # 정확도 값에 따른 이진분류 , 보완필요
+print(y_predict.shape)
+'''
+ # 정확도 값에 따른 이진분류 , 보완필요
 for i in len(y_predict) :
     if y_predict[i] > 0.5 :
         y_predict[i] = 1
     else :
         y_predict[i] = 0
-'''    
+  '''
 print(x_test, "의 예측결과 : ", y_predict)
 # print("acc = ", accuracy_score([0,1, 1, 0], y_predict))
 # print("acc = ", accuracy_score(y_train, y_predict))
