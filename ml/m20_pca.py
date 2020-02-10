@@ -15,5 +15,5 @@ pca.fit(X_scaled)
 X_pca = pca.transform(X_scaled)
 print("원본 데이터 형태 :", X_scaled.shape)
 print("축소된 데이터 형태 :", X_pca.shape)
-
+print("test")
                                     
